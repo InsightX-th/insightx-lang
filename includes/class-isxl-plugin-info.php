@@ -5,6 +5,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 class ISXL_Plugin_Info {
 
     const SLUG = 'insightx-lang';
+    const TESTED_WP = '7.1.5';
+    const REQUIRES_PHP = '7.4';
 
     public static function register_hooks() {
         add_filter( 'plugins_api', [ __CLASS__, 'info' ], 10, 3 );
@@ -25,7 +27,8 @@ class ISXL_Plugin_Info {
             'author'       => '<a href="https://www.insightx.in.th">InsightX</a>',
             'homepage'     => 'https://insightx.in.th/',
             'requires'     => '6.5',
-            'requires_php' => '7.4',
+            'tested'       => self::TESTED_WP,
+            'requires_php' => self::REQUIRES_PHP,
             'sections'     => self::sections(),
             'banners'      => [ 'low' => self::asset_url( 'assets/branding/banner.svg' ), 'high' => self::asset_url( 'assets/branding/banner.svg' ) ],
             'icons'        => self::icons(),
@@ -41,11 +44,17 @@ class ISXL_Plugin_Info {
         $info->sections = $sections;
         $info->banners  = $ours->banners;
         $info->icons    = $ours->icons;
+        $info->tested   = self::TESTED_WP;
+        $info->requires_php = self::REQUIRES_PHP;
         return $info;
     }
 
     public static function decorate_update( $update ) {
-        if ( is_object( $update ) ) $update->icons = self::icons();
+        if ( is_object( $update ) ) {
+            $update->icons = self::icons();
+            $update->tested = self::TESTED_WP;
+            $update->requires_php = self::REQUIRES_PHP;
+        }
         return $update;
     }
 

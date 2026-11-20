@@ -20,6 +20,10 @@ function ensure( $condition, $message ) {
 $args = (object) [ 'slug' => 'insightx-lang' ];
 $info = ISXL_Plugin_Info::info( false, 'plugin_information', $args );
 ensure( is_object( $info ), 'plugin_information returns plugin info' );
+ensure( $info->tested === '7.1.5', 'WordPress tested version is shown' );
+ensure( $info->requires_php === '7.4', 'minimum PHP version is shown' );
+ensure( strpos( $plugin_file, 'Tested up to:      ' . $info->tested ) !== false, 'plugin header matches tested version' );
+ensure( strpos( $plugin_file, 'Requires PHP:      ' . $info->requires_php ) !== false, 'plugin header matches PHP minimum' );
 ensure( isset( $info->sections['description'], $info->sections['installation'], $info->sections['faq'], $info->sections['changelog'] ), 'all modal tabs are present' );
 ensure( strpos( $info->sections['installation'], 'อัปโหลด' ) !== false, 'Thai installation instructions' );
 ensure( strpos( $info->banners['low'], 'banner.svg?ver=' ) !== false, 'versioned banner URL' );
@@ -29,9 +33,11 @@ ensure( ISXL_Plugin_Info::info( false, 'plugin_information', (object) [ 'slug' =
 $remote = (object) [ 'version' => '9.9.9', 'sections' => [ 'changelog' => '<p>Remote release</p>' ] ];
 $decorated = ISXL_Plugin_Info::decorate( $remote );
 ensure( $decorated->version === '9.9.9', 'remote release version is retained' );
+ensure( $decorated->tested === '7.1.5' && $decorated->requires_php === '7.4', 'remote modal gets compatibility fields' );
 ensure( $decorated->sections['changelog'] === '<p>Remote release</p>', 'remote changelog is retained' );
 ensure( isset( $decorated->sections['installation'], $decorated->sections['faq'] ), 'missing sections are added to remote info' );
 
 $update = ISXL_Plugin_Info::decorate_update( (object) [] );
 ensure( isset( $update->icons['1x'], $update->icons['2x'] ), 'update row gets the new icon' );
+ensure( $update->tested === '7.1.5' && $update->requires_php === '7.4', 'update row gets compatibility fields' );
 echo "Plugin info OK\n";

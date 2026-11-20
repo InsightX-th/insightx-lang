@@ -2,12 +2,13 @@
 /**
  * Plugin Name:       InsightX Lang
  * Plugin URI:        https://insightx.in.th/
- * Version:           0.1.2
+ * Version:           0.1.3
  * Author:            InsightX
  * Author URI:        https://www.insightx.in.th
  * Text Domain:       insightx-lang
  * Domain Path:       /languages
  * Requires at least: 6.5
+ * Tested up to:      7.1.5
  * Requires PHP:      7.4
  * WC requires at least: 8.0
  * Description:       Lean multilingual for WordPress: posts, pages, terms, menus, widgets, Gutenberg blocks, strings, hreflang and WooCommerce products — /en/ directory URLs.
@@ -16,7 +17,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'ISXL_VERSION', '0.1.2' );
+define( 'ISXL_VERSION', '0.1.3' );
 define( 'ISXL_FILE', __FILE__ );
 define( 'ISXL_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
 define( 'ISXL_URL', trailingslashit( plugin_dir_url( __FILE__ ) ) );
