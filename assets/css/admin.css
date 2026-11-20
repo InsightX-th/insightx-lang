@@ -1,0 +1,776 @@
+/* InsightX Lang — admin UI (same theme as InsightX AllHub) */
+
+:root {
+  --isxl-accent: #0079ff;
+  --isxl-accent-hover: #0062d1;
+  --isxl-accent-soft: #e6f2ff;
+  --isxl-accent-line: #bfe0ff;
+  --isxl-danger: #ff0000;
+  --isxl-danger-soft: #ffe8e8;
+  --isxl-danger-line: #ffc2c2;
+  --isxl-ok: #10b981;
+  --isxl-ok-soft: #ecfdf5;
+  --isxl-warn: #b45309;
+  --isxl-warn-soft: #fef4e7;
+  --isxl-warn-line: #fcd9a8;
+  --isxl-ink: #0f172a;
+  --isxl-muted: #5a6881;
+  --isxl-line: #e2e8f0;
+  --isxl-bg: #f8fafc;
+  --isxl-card: #ffffff;
+  --isxl-radius: 14px;
+  --isxl-shadow-sm:
+    0 1px 2px rgba(15, 23, 42, 0.04), 0 2px 8px rgba(15, 23, 42, 0.05);
+  --isxl-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.05), 0 4px 16px rgba(15, 23, 42, 0.06);
+  --isxl-shadow-lg:
+    0 4px 10px rgba(15, 23, 42, 0.07), 0 10px 28px rgba(15, 23, 42, 0.09);
+  --isxl-focus-ring: 0 0 0 3px rgba(0, 121, 255, 0.15);
+}
+
+.isxl-wrap {
+  margin: 20px 20px 20px 0;
+  color: var(--isxl-ink);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  /* One over-wide child (a long bucket name, the diagnostic block, an
+     absolutely-positioned dropdown) must not make the whole admin page
+     scroll sideways — the child is what should scroll, not the page. */
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.isxl-wrap * {
+  box-sizing: border-box;
+}
+.isxl-wrap h1,
+.isxl-wrap h2 {
+  margin: 0;
+  color: var(--isxl-ink);
+}
+
+/* ---------- Header ---------- */
+
+.isxl-header {
+  background: linear-gradient(135deg, #e6f2ff 0%, #f2f8ff 55%, #eefaf6 100%);
+  border: 1px solid var(--isxl-line);
+  border-radius: var(--isxl-radius);
+  box-shadow: var(--isxl-shadow);
+  /* No overflow:hidden here — the Offload Status dropdown hangs below the
+     header and would get clipped. The nav row's own bottom corners are
+     rounded instead (see .isxl-nav). */
+}
+
+.isxl-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 20px 26px 18px;
+}
+
+.isxl-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.isxl-logo {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 60, 140, 0.18);
+}
+.isxl-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.isxl-header h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.isxl-tagline {
+  margin: 2px 0 0;
+  color: var(--isxl-muted);
+  font-size: 13px;
+}
+
+/* ---------- Horizontal nav tabs ---------- */
+
+.isxl-nav {
+  display: flex;
+  gap: 2px;
+  padding: 0 18px;
+  background: var(--isxl-card);
+  border-top: 1px solid var(--isxl-line);
+  border-radius: 0 0 var(--isxl-radius) var(--isxl-radius);
+}
+
+.isxl-nav-item {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 12px 18px 11px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--isxl-muted);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.isxl-nav-item::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: -1px;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: transparent;
+}
+.isxl-nav-item:hover {
+  color: var(--isxl-accent);
+}
+.isxl-nav-item.is-active {
+  color: var(--isxl-accent);
+}
+.isxl-nav-item.is-active::after {
+  background: var(--isxl-accent);
+}
+.isxl-nav-item:focus-visible {
+  outline: none;
+  box-shadow: inset var(--isxl-focus-ring);
+}
+
+.isxl-main {
+  margin-top: 22px;
+}
+
+.isxl-tab {
+  display: none;
+}
+.isxl-tab.is-active {
+  display: block;
+  animation: isxl-fade 0.18s ease;
+}
+@keyframes isxl-fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Cards ---------- */
+
+.isxl-card {
+  background: var(--isxl-card);
+  border: 1px solid var(--isxl-line);
+  border-radius: var(--isxl-radius);
+  box-shadow: var(--isxl-shadow);
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+/* Half-width card (e.g. the Assets Pull card) — keeps the panel from
+   stretching a single card across the full page width. */
+.isxl-card-half {
+  width: 50%;
+  max-width: 50%;
+}
+
+.isxl-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 22px;
+  border-bottom: 1px solid var(--isxl-line);
+}
+.isxl-card-head h2 {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+.isxl-card-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+}
+.isxl-card-head-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.isxl-card-head-title .isxl-provider-icon {
+  width: 34px;
+  height: 34px;
+  flex: none;
+}
+.isxl-card-sub {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: var(--isxl-muted);
+}
+
+.isxl-card-body {
+  padding: 20px 22px;
+}
+.isxl-card-body > p {
+  margin-top: 0;
+  color: var(--isxl-muted);
+}
+
+/* ---------- Media tab: Storage / Delivery two-column grid ---------- */
+/* ---------- Fields ---------- */
+
+.isxl-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 18px;
+}
+.isxl-col-span {
+  grid-column: 1 / -1;
+}
+
+.isxl-field {
+  margin-bottom: 16px;
+}
+.isxl-field label {
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.isxl-field input[type="text"],
+.isxl-field input[type="url"],
+.isxl-field input[type="password"] {
+  width: 100%;
+  border: 1px solid var(--isxl-line);
+  border-radius: 10px;
+  padding: 9px 13px;
+  font-size: 13.5px;
+  background: var(--isxl-bg);
+  color: var(--isxl-ink);
+  box-shadow: none;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s,
+    background 0.15s;
+}
+.isxl-field input:focus {
+  outline: none;
+  border-color: var(--isxl-accent);
+  background: #fff;
+  box-shadow: var(--isxl-focus-ring);
+}
+.isxl-field input:disabled {
+  background: #f1f5f9;
+  color: var(--isxl-muted);
+  cursor: not-allowed;
+}
+.isxl-card-connect {
+  width: 60%;
+}
+
+.isxl-hint {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: var(--isxl-muted);
+}
+.isxl-indent {
+  margin: -6px 0 16px 56px;
+  max-width: 420px;
+}
+
+/* ---------- Toggles ---------- */
+
+.isxl-toggle {
+  display: flex;
+  gap: 14px;
+  padding: 10px 0;
+  align-items: flex-start;
+}
+.isxl-toggle-text strong {
+  font-size: 13.5px;
+}
+.isxl-toggle-text p {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  color: var(--isxl-muted);
+}
+/* A toggle whose setting no longer affects the key, because the content
+   folder supersedes it. Still clickable — it applies again the moment the
+   content folder is off, or to files the content rules cannot classify. */
+.isxl-toggle.is-superseded {
+  opacity: 0.5;
+}
+.isxl-toggle-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.isxl-switch {
+  flex: none;
+  width: 42px;
+  height: 24px;
+  border: none;
+  border-radius: 999px;
+  background: #cbd5e1;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 1px;
+  padding: 0;
+}
+.isxl-switch-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.18);
+  transition: transform 0.2s ease;
+}
+.isxl-switch.is-on {
+  background: var(--isxl-accent);
+}
+.isxl-switch.is-on .isxl-switch-knob {
+  transform: translateX(18px);
+}
+.isxl-switch:focus-visible {
+  outline: 2px solid var(--isxl-accent);
+  outline-offset: 2px;
+}
+
+/* ---------- Buttons ---------- */
+
+.isxl-btn {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    transform 0.05s,
+    box-shadow 0.15s;
+  line-height: 1.4;
+}
+.isxl-btn:active {
+  transform: translateY(1px);
+}
+.isxl-btn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.isxl-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--isxl-focus-ring);
+}
+
+.isxl-btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--isxl-accent),
+    var(--isxl-accent-hover)
+  );
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 121, 255, 0.3);
+}
+.isxl-btn-primary:hover:not([disabled]) {
+  box-shadow: 0 6px 16px rgba(0, 121, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.isxl-btn-ghost {
+  background: transparent;
+  color: var(--isxl-accent);
+  border-color: var(--isxl-accent-line);
+}
+.isxl-btn-ghost:hover:not([disabled]) {
+  background: var(--isxl-accent-soft);
+}
+.isxl-btn-ghost.is-ok {
+  background: var(--isxl-ok-soft);
+  color: #067a56;
+  border-color: #a7f3d0;
+}
+.isxl-btn-ghost.is-error {
+  background: var(--isxl-danger-soft);
+  color: var(--isxl-danger);
+  border-color: var(--isxl-danger-line);
+}
+
+.isxl-btn-danger {
+  background: #fff;
+  color: var(--isxl-danger);
+  border-color: var(--isxl-danger-line);
+}
+.isxl-btn-danger:hover:not([disabled]) {
+  background: var(--isxl-danger-soft);
+}
+
+/* ---------- Toast — brief auto-save feedback ---------- */
+
+.isxl-toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 200;
+  background: var(--isxl-ink);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 18px;
+  border-radius: 10px;
+  box-shadow: var(--isxl-shadow-lg);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+.isxl-toast.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.isxl-toast.is-error {
+  background: var(--isxl-danger);
+}
+
+/* ---------- Checkboxes: one small rounded style on every InsightX page ---------- */
+.isxl-wrap input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  flex: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  margin: 0;
+  padding: 0;
+  border: 1.5px solid #b8c4d6;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-grid;
+  place-content: center;
+  vertical-align: middle;
+  transition: background 0.12s, border-color 0.12s, box-shadow 0.12s;
+}
+.isxl-wrap input[type="checkbox"]::before,
+.isxl-wrap input[type="checkbox"]:checked::before {
+  /* Overrides WordPress admin's own checkmark (an SVG with offsets). */
+  content: "";
+  float: none;
+  margin: 0;
+  width: 9px;
+  height: 9px;
+  transform: scale(0);
+  transition: transform 0.12s;
+  background: #fff;
+  clip-path: polygon(14% 44%, 0 59%, 40% 100%, 100% 22%, 86% 8%, 39% 70%);
+}
+.isxl-wrap input[type="checkbox"]:hover {
+  border-color: var(--isxl-accent);
+}
+.isxl-wrap input[type="checkbox"]:checked {
+  background: var(--isxl-accent);
+  border-color: var(--isxl-accent);
+}
+.isxl-wrap input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+.isxl-wrap input[type="checkbox"]:focus-visible {
+  outline: none;
+  box-shadow: var(--isxl-focus-ring);
+}
+.isxl-wrap input[type="checkbox"]:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+
+/* ==========================================================================
+   InsightX Lang — page-specific pieces (built on the shared tokens above)
+   ========================================================================== */
+
+/* Tabs are links here (one form per tab), not buttons. */
+a.isxl-nav-item {
+  display: inline-block;
+  text-decoration: none;
+}
+a.isxl-nav-item:focus {
+  box-shadow: none;
+}
+
+.isxl-card-foot,
+.isxl-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 22px;
+  border-top: 1px solid var(--isxl-line);
+  background: var(--isxl-bg);
+}
+.isxl-actions {
+  border: 0;
+  background: none;
+  padding: 0 0 18px;
+}
+.isxl-card-body.isxl-flush {
+  padding: 0;
+  overflow-x: auto;
+}
+.isxl-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.isxl-big-num {
+  margin: 0;
+  color: var(--isxl-muted);
+}
+.isxl-big-num strong {
+  font-size: 1.5rem;
+  color: var(--isxl-ink);
+  margin-right: 4px;
+}
+.isxl-muted {
+  color: var(--isxl-muted);
+}
+.isxl-empty {
+  margin: 0;
+  padding: 20px 22px;
+  color: var(--isxl-muted);
+}
+
+/* Inputs outside .isxl-field (tables, card heads). */
+.isxl-wrap .isxl-input {
+  width: 100%;
+  border: 1px solid var(--isxl-line);
+  border-radius: 10px;
+  padding: 7px 11px;
+  font-size: 13px;
+  background: var(--isxl-bg);
+  color: var(--isxl-ink);
+  box-shadow: none;
+  min-height: 36px;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.isxl-wrap .isxl-input:focus {
+  outline: none;
+  border-color: var(--isxl-accent);
+  background: #fff;
+  box-shadow: var(--isxl-focus-ring);
+}
+.isxl-wrap .isxl-input-sm {
+  max-width: 120px;
+}
+.isxl-wrap .isxl-input-xs {
+  max-width: 56px;
+}
+.isxl-wrap select.isxl-input {
+  width: auto;
+  padding-right: 28px;
+}
+.isxl-card-head-actions .isxl-input {
+  width: 200px;
+}
+
+/* Tables */
+.isxl-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.isxl-table th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--isxl-muted);
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--isxl-line);
+  white-space: nowrap;
+}
+.isxl-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--isxl-line);
+  vertical-align: middle;
+}
+.isxl-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.isxl-col-drag {
+  width: 28px;
+}
+.isxl-drag {
+  cursor: grab;
+  color: var(--isxl-muted);
+  letter-spacing: -3px;
+  user-select: none;
+}
+.isxl-lang-row.ui-sortable-helper {
+  background: var(--isxl-card);
+  box-shadow: var(--isxl-shadow-lg);
+  display: table;
+}
+.isxl-col-del {
+  width: 44px;
+  text-align: center;
+}
+.isxl-del {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--isxl-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.isxl-del:hover:not([disabled]) {
+  background: var(--isxl-danger-soft);
+  border-color: var(--isxl-danger-line);
+  color: var(--isxl-danger);
+}
+.isxl-del:focus-visible {
+  outline: none;
+  box-shadow: var(--isxl-focus-ring);
+}
+.isxl-del[disabled] {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.isxl-flag-preview {
+  font-size: 18px;
+  vertical-align: middle;
+}
+/* `.isxl-card-body > p` zeroes margin-top, so match its specificity. */
+.isxl-card-body > .isxl-hint-below {
+  margin: 20px 0 0;
+  padding: 0 12px;
+}
+.isxl-card-head-actions #isxl-preset {
+  width: auto;
+  min-width: 220px;
+}
+
+.isxl-str-table td {
+  vertical-align: top;
+  min-width: 220px;
+}
+.isxl-str-orig {
+  width: 38%;
+  word-break: break-word;
+}
+.isxl-str-meta {
+  display: block;
+  font-size: 11.5px;
+  color: var(--isxl-muted);
+  margin-bottom: 2px;
+}
+.isxl-str-table textarea.isxl-input {
+  resize: vertical;
+}
+
+.isxl-checklist {
+  display: grid;
+  gap: 10px;
+}
+.isxl-checklist label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.isxl-checklist code {
+  font-size: 11.5px;
+  background: var(--isxl-bg);
+  border: 1px solid var(--isxl-line);
+  border-radius: 6px;
+  padding: 1px 6px;
+}
+
+.isxl-note section + section {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--isxl-line);
+}
+.isxl-note h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+}
+.isxl-note p {
+  margin: 0;
+  color: var(--isxl-muted);
+}
+
+.isxl-wrap input[type="radio"] {
+  accent-color: var(--isxl-accent);
+}
+
+@media (max-width: 782px) {
+  .isxl-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .isxl-nav {
+    flex-wrap: wrap;
+    padding: 6px 12px;
+  }
+  .isxl-card-head {
+    flex-wrap: wrap;
+  }
+  .isxl-card-head-actions .isxl-input {
+    width: 100%;
+  }
+}
+
+/* One control height for buttons, inputs and selects on every InsightX Lang
+   screen, so a select sitting next to a button lines up. */
+.isxl-wrap .isxl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+.isxl-wrap .isxl-input,
+.isxl-wrap select.isxl-input {
+  height: 38px;
+  min-height: 38px;
+  box-sizing: border-box;
+}
+.isxl-wrap select.isxl-input {
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 36px;
+}
+.isxl-wrap textarea.isxl-input {
+  height: auto;
+}

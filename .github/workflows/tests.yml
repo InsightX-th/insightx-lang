@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    name: PHP 7.4+ compatibility
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer:v2
+      - name: Install PHPCompatibilityWP
+        run: |
+          composer global config --no-interaction allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
+          composer global require --no-interaction --no-progress \
+            squizlabs/php_codesniffer:^3 phpcompatibility/phpcompatibility-wp:^2 dealerdirect/phpcodesniffer-composer-installer
+      - name: Check PHP 7.4+ compatibility
+        run: |
+          "$(composer global config bin-dir --absolute --quiet)/phpcs" -p \
+            --standard=PHPCompatibilityWP --runtime-set testVersion 7.4- \
+            --exclude=PHPCompatibility.Extensions.RemovedExtensions \
+            --extensions=php --ignore='*/libs/*,*/vendor/*' .
+
+  php:
+    name: PHP ${{ matrix.php }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['7.4', '8.0', '8.1', '8.2', '8.3', '8.4']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mbstring
+      - name: Check PHP syntax
+        run: find . -type f -name '*.php' -not -path './libs/*' -print0 | xargs -0 -n1 php -l
+      - name: Run URL helper tests
+        run: php tests/run.php
+
+  assets:
+    name: JavaScript, guide and translations
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: find assets/js -type f -name '*.js' -print0 | xargs -0 -n1 node --check
+      - name: Check guide screenshots and plugin icons
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          guide = Path('docs/user-guide.md')
+          images = re.findall(r'!\[[^]]*\]\(([^)]+)\)', guide.read_text())
+          assert images, 'Guide has no screenshots'
+          for image in images:
+              assert (guide.parent / image).is_file(), f'Missing screenshot: {image}'
+          for size in (128, 256):
+              assert Path(f'assets/icon-{size}x{size}.png').is_file(), f'Missing {size}px plugin icon'
+          print(f'{len(images)} guide screenshots and both icons found')
+          PY
+      - name: Check Thai translation catalog
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq gettext > /dev/null
+          msgfmt --check -o /dev/null languages/insightx-lang-th.po

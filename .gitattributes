@@ -1,0 +1,10 @@
+# Keep development and CI files out of the WordPress installable zip.
+/.github export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/tests export-ignore
+
+# Preserve upstream vendored files and gettext catalogs as shipped.
+/libs/** -whitespace
+/languages/*.po -whitespace
+/languages/*.pot -whitespace

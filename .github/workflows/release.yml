@@ -1,0 +1,44 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build_and_release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+      - name: Check version and PHP tests
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          HEADER="$(sed -n 's/^ \* Version: *//p' insightx-lang.php | tr -d '[:space:]')"
+          CONST="$(sed -n "s/^define( 'ISXL_VERSION', '\([^']*\)' );/\1/p" insightx-lang.php)"
+          echo "tag=$TAG header=$HEADER const=$CONST"
+          [ "$TAG" = "$HEADER" ] && [ "$TAG" = "$CONST" ] || { echo '::error::Version mismatch'; exit 1; }
+          php tests/run.php
+      - name: Build installable zip from tracked release files
+        run: |
+          mkdir -p package
+          git archive --format=tar --prefix=insightx-lang/ "$GITHUB_REF_NAME" | tar -x -C package
+          (cd package && zip -qr "../insightx-lang-${GITHUB_REF_NAME}.zip" insightx-lang)
+          unzip -t "insightx-lang-${GITHUB_REF_NAME}.zip" | tail -1
+          unzip -Z1 "insightx-lang-${GITHUB_REF_NAME}.zip" > release-files.txt
+          for file in insightx-lang.php assets/icon-128x128.png assets/icon-256x256.png assets/images/guide/languages-real.png includes/views/user-guide.php libs/plugin-update-checker/plugin-update-checker.php; do
+            grep -Fxq "insightx-lang/$file" release-files.txt || { echo "::error::Missing release file: $file"; exit 1; }
+          done
+      - name: Prepare release notes
+        run: awk '/^\*\*\[?[0-9]/ { if (seen++) exit } { print }' CHANGELOG.md > release-notes.md
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: insightx-lang-${{ github.ref_name }}.zip
+          name: insightx-lang ${{ github.ref_name }}
+          body_path: release-notes.md

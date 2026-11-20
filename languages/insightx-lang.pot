@@ -1,0 +1,456 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: InsightX Lang 0.1.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: insightx-lang\n"
+
+#: includes/class-isxl-widgets.php includes/class-isxl-admin.php assets/js/editor-blocks.js
+msgid "All languages"
+msgstr ""
+
+#: assets/js/editor-blocks.js
+msgid "Language visibility"
+msgstr ""
+
+#: assets/js/editor-blocks.js
+msgid "Show this block in"
+msgstr ""
+
+#: includes/class-isxl-admin.php assets/js/editor-blocks.js
+msgid "Language switcher"
+msgstr ""
+
+#: assets/js/editor-blocks.js
+msgid "Links to this page in the other languages."
+msgstr ""
+
+#: assets/js/editor-blocks.js
+msgid "Switcher"
+msgstr ""
+
+#: assets/js/editor-blocks.js
+msgid "Style"
+msgstr ""
+
+#: assets/js/editor-blocks.js
+msgid "List"
+msgstr ""
+
+#: assets/js/editor-blocks.js
+msgid "Dropdown"
+msgstr ""
+
+#: assets/js/editor-blocks.js
+msgid "Show flags"
+msgstr ""
+
+#: assets/js/editor-blocks.js
+msgid "Show names"
+msgstr ""
+
+#: assets/js/editor-blocks.js
+msgid "Hide current language"
+msgstr ""
+
+#: assets/js/editor-panel.js
+msgid "Could not change the language."
+msgstr ""
+
+#: assets/js/editor-panel.js
+msgid "Edit"
+msgstr ""
+
+#: assets/js/editor-panel.js
+#, php-format
+msgid "Edit (%s)"
+msgstr ""
+
+#: assets/js/editor-panel.js
+msgid "Save first, so the copy includes your changes."
+msgstr ""
+
+#: includes/class-isxl-admin-terms.php assets/js/editor-panel.js
+msgid "+ Add"
+msgstr ""
+
+#: assets/js/editor-panel.js
+msgid "Save first"
+msgstr ""
+
+#: includes/class-isxl-admin-posts.php includes/class-isxl-switcher.php includes/class-isxl-model.php includes/class-isxl-admin-terms.php assets/js/editor-panel.js
+msgid "Language"
+msgstr ""
+
+#: assets/js/editor-panel.js
+msgid "This content is in"
+msgstr ""
+
+#: assets/js/editor-panel.js
+msgid "Changing it keeps the links to the other translations."
+msgstr ""
+
+#: includes/class-isxl-admin-terms.php assets/js/editor-panel.js
+msgid "Translations"
+msgstr ""
+
+#: includes/class-isxl-admin-posts.php
+#, php-format
+msgid "Edit the %1$s translation: %2$s"
+msgstr ""
+
+#: includes/class-isxl-admin-posts.php
+#, php-format
+msgid "Add a %s translation"
+msgstr ""
+
+#: includes/class-isxl-admin-posts.php includes/class-isxl-duplicator.php
+msgid "Unknown language."
+msgstr ""
+
+#: includes/class-isxl-admin-posts.php
+msgid "Another translation already uses this language."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Add your languages to start translating."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Open settings"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Languages"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Strings"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Content"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Guide"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Multilingual posts, pages, products, menus, widgets and strings"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Saved"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+#, php-format
+msgid "Language set on %d items"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Drag to reorder. The default language has no prefix in URLs; the others use /slug/."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Order"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Default"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Name"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "URL slug"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Locale"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Flag"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Remove"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Choose a language…"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Custom…"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Add language"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Removing a language keeps its content; the content simply has no language until you add it again."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Save languages"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Content without a language"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Items without a language are hidden from the front end."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "items"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+#, php-format
+msgid "Set them to %s"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Drag to reorder"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Default language"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Translated content types"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Each item belongs to one language and can have one translation per language."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Translated taxonomies"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Categories, tags and product attributes per language."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "All WooCommerce product attributes"
+msgstr ""
+
+#: includes/class-isxl-wc.php includes/class-isxl-admin.php
+msgid "Save"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Search…"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "All groups"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "String translations"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Leave a field empty to use the original text."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Add a second language first."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Original"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Save translations"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Theme texts"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Texts from the Customizer (header, footer, buttons). Ticked ones appear in the list above."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "The active theme has no text settings."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Save theme texts"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Translate a post, page or product"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Open it in the editor → \"Language\" panel in the sidebar → \"+ Add\" next to a language. A draft copy is created in that language; translate it and publish. Lists also have a column per language: ✓ = this item, ✎ = edit translation, + = add."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Categories, tags and attributes"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Edit a term → \"Translations\" row → \"+ Add\". Products in a translation use the matching translated terms automatically."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Menus"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Appearance → Menus → Manage Locations: each location has one twin per extra language, e.g. \"Primary (English)\". Leave it empty to reuse the default menu."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Use the \"Language switcher\" block, the shortcode [isxl_switcher] (style=\"dropdown\" for a select), or a menu Custom Link with URL #isxl-switcher."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Widgets and blocks per language"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Classic widgets have a \"Show in language\" field. Any block (widgets, pages, templates) has \"Language visibility\" in its sidebar."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Site title, theme and plugin texts"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Strings tab. Tick Customizer texts under \"Theme texts\" to make them translatable. Theme/plugin texts that ship with .mo files switch automatically with the language locale."
+msgstr ""
+
+#: includes/class-isxl-wc.php includes/class-isxl-admin.php insightx-lang.php
+msgid "WooCommerce"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Price, stock, SKU and the other fields chosen in the WooCommerce tab stay identical across translations of a product. Cart, checkout and account pages follow the language; orders remember it and emails go out in it."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "For developers"
+msgstr ""
+
+#: includes/class-isxl-duplicator.php
+msgid "You cannot edit this item."
+msgstr ""
+
+#: includes/class-isxl-duplicator.php
+msgid "This content type is not translated."
+msgstr ""
+
+#: includes/class-isxl-duplicator.php
+msgid "This taxonomy is not translated."
+msgstr ""
+
+#: includes/class-isxl-strings.php
+msgid "Widgets"
+msgstr ""
+
+#: includes/class-isxl-strings.php
+msgid "Theme"
+msgstr ""
+
+#: includes/class-isxl-wc.php
+msgid "Price & sale dates"
+msgstr ""
+
+#: includes/class-isxl-wc.php
+msgid "Stock"
+msgstr ""
+
+#: includes/class-isxl-wc.php
+msgid "Weight, size & shipping class"
+msgstr ""
+
+#: includes/class-isxl-wc.php
+msgid "Tax"
+msgstr ""
+
+#: includes/class-isxl-wc.php
+msgid "Product type, virtual & downloads"
+msgstr ""
+
+#: includes/class-isxl-wc.php
+msgid "Upsells, cross-sells & grouped"
+msgstr ""
+
+#: includes/class-isxl-wc.php
+msgid "Attributes & default variation"
+msgstr ""
+
+#: includes/class-isxl-wc.php
+msgid "Image & gallery"
+msgstr ""
+
+#: includes/class-isxl-wc.php
+msgid "Featured & catalog visibility"
+msgstr ""
+
+#: includes/class-isxl-wc.php
+msgid "WooCommerce emails"
+msgstr ""
+
+#: includes/class-isxl-wc.php
+msgid "Email footer"
+msgstr ""
+
+#: includes/class-isxl-wc.php
+msgid "Keep identical across translations"
+msgstr ""
+
+#: includes/class-isxl-wc.php
+msgid "Ticked data is copied from the product you save to all its translations. Title, description and slug are always per language."
+msgstr ""
+
+#: includes/class-isxl-wc.php
+msgid "Pages"
+msgstr ""
+
+#: includes/class-isxl-wc.php
+msgid "Translate the Shop, Cart, Checkout, My account and Terms pages like any page (Pages → + in the language column). WooCommerce then uses the right one for each language."
+msgstr ""
+
+#: includes/class-isxl-widgets.php
+msgid "Show in language:"
+msgstr ""
+
+#: insightx-lang.php
+#, php-format
+msgid "Deactivate %s first — InsightX Lang stays off while another multilingual plugin is active."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+#, php-format
+msgid "Delete \"%s\"? Its content stays, but it will have no language until you add this language again."
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "Settings"
+msgstr ""
+
+#: includes/class-isxl-admin.php
+msgid "User Guide"
+msgstr ""
+

@@ -1,0 +1,457 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: InsightX Lang 0.1.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: th\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: insightx-lang\n"
+
+#: includes/class-isxl-widgets.php includes/class-isxl-admin.php assets/js/editor-blocks.js
+msgid "All languages"
+msgstr "ทุกภาษา"
+
+#: assets/js/editor-blocks.js
+msgid "Language visibility"
+msgstr "แสดงตามภาษา"
+
+#: assets/js/editor-blocks.js
+msgid "Show this block in"
+msgstr "แสดงบล็อกนี้ใน"
+
+#: includes/class-isxl-admin.php assets/js/editor-blocks.js
+msgid "Language switcher"
+msgstr "ตัวสลับภาษา"
+
+#: assets/js/editor-blocks.js
+msgid "Links to this page in the other languages."
+msgstr "ลิงก์ไปหน้านี้ในภาษาอื่น"
+
+#: assets/js/editor-blocks.js
+msgid "Switcher"
+msgstr "ตัวสลับภาษา"
+
+#: assets/js/editor-blocks.js
+msgid "Style"
+msgstr "รูปแบบ"
+
+#: assets/js/editor-blocks.js
+msgid "List"
+msgstr "รายการ"
+
+#: assets/js/editor-blocks.js
+msgid "Dropdown"
+msgstr "ดรอปดาวน์"
+
+#: assets/js/editor-blocks.js
+msgid "Show flags"
+msgstr "แสดงธง"
+
+#: assets/js/editor-blocks.js
+msgid "Show names"
+msgstr "แสดงชื่อภาษา"
+
+#: assets/js/editor-blocks.js
+msgid "Hide current language"
+msgstr "ซ่อนภาษาปัจจุบัน"
+
+#: assets/js/editor-panel.js
+msgid "Could not change the language."
+msgstr "เปลี่ยนภาษาไม่สำเร็จ"
+
+#: assets/js/editor-panel.js
+msgid "Edit"
+msgstr "แก้ไข"
+
+#: assets/js/editor-panel.js
+#, php-format
+msgid "Edit (%s)"
+msgstr "แก้ไข (%s)"
+
+#: assets/js/editor-panel.js
+msgid "Save first, so the copy includes your changes."
+msgstr "บันทึกก่อน เพื่อให้ฉบับแปลได้เนื้อหาที่แก้ล่าสุดไปด้วย"
+
+#: includes/class-isxl-admin-terms.php assets/js/editor-panel.js
+msgid "+ Add"
+msgstr "+ เพิ่ม"
+
+#: assets/js/editor-panel.js
+msgid "Save first"
+msgstr "บันทึกก่อน"
+
+#: includes/class-isxl-admin-posts.php includes/class-isxl-switcher.php includes/class-isxl-model.php includes/class-isxl-admin-terms.php assets/js/editor-panel.js
+msgid "Language"
+msgstr "ภาษา"
+
+#: assets/js/editor-panel.js
+msgid "This content is in"
+msgstr "เนื้อหานี้เป็นภาษา"
+
+#: assets/js/editor-panel.js
+msgid "Changing it keeps the links to the other translations."
+msgstr "เปลี่ยนแล้วยังผูกกับฉบับแปลอื่นเหมือนเดิม"
+
+#: includes/class-isxl-admin-terms.php assets/js/editor-panel.js
+msgid "Translations"
+msgstr "ฉบับแปล"
+
+#: includes/class-isxl-admin-posts.php
+#, php-format
+msgid "Edit the %1$s translation: %2$s"
+msgstr "แก้ไขฉบับ%1$s: %2$s"
+
+#: includes/class-isxl-admin-posts.php
+#, php-format
+msgid "Add a %s translation"
+msgstr "เพิ่มฉบับ%s"
+
+#: includes/class-isxl-admin-posts.php includes/class-isxl-duplicator.php
+msgid "Unknown language."
+msgstr "ไม่รู้จักภาษานี้"
+
+#: includes/class-isxl-admin-posts.php
+msgid "Another translation already uses this language."
+msgstr "มีฉบับแปลอื่นใช้ภาษานี้อยู่แล้ว"
+
+#: includes/class-isxl-admin.php
+msgid "Add your languages to start translating."
+msgstr "เพิ่มภาษาก่อนเพื่อเริ่มแปล"
+
+#: includes/class-isxl-admin.php
+msgid "Open settings"
+msgstr "เปิดการตั้งค่า"
+
+#: includes/class-isxl-admin.php
+msgid "Languages"
+msgstr "ภาษา"
+
+#: includes/class-isxl-admin.php
+msgid "Strings"
+msgstr "ข้อความ"
+
+#: includes/class-isxl-admin.php
+msgid "Content"
+msgstr "เนื้อหา"
+
+#: includes/class-isxl-admin.php
+msgid "Guide"
+msgstr "วิธีใช้"
+
+#: includes/class-isxl-admin.php
+msgid "Multilingual posts, pages, products, menus, widgets and strings"
+msgstr "ทำเว็บหลายภาษา ทั้งเรื่อง หน้า สินค้า เมนู วิดเจ็ต และข้อความ"
+
+#: includes/class-isxl-admin.php
+msgid "Saved"
+msgstr "บันทึกแล้ว"
+
+#: includes/class-isxl-admin.php
+#, php-format
+msgid "Language set on %d items"
+msgstr "ตั้งภาษาให้แล้ว %d รายการ"
+
+#: includes/class-isxl-admin.php
+msgid "Drag to reorder. The default language has no prefix in URLs; the others use /slug/."
+msgstr "ลากเพื่อเรียงลำดับ ภาษาหลักไม่มีคำนำหน้าใน URL ส่วนภาษาอื่นจะขึ้นต้นด้วย /slug/"
+
+#: includes/class-isxl-admin.php
+msgid "Order"
+msgstr "ลำดับ"
+
+#: includes/class-isxl-admin.php
+msgid "Default"
+msgstr "ภาษาหลัก"
+
+#: includes/class-isxl-admin.php
+msgid "Name"
+msgstr "ชื่อ"
+
+#: includes/class-isxl-admin.php
+msgid "URL slug"
+msgstr "Slug ใน URL"
+
+#: includes/class-isxl-admin.php
+msgid "Locale"
+msgstr "Locale"
+
+#: includes/class-isxl-admin.php
+msgid "Flag"
+msgstr "ธง"
+
+#: includes/class-isxl-admin.php
+msgid "Remove"
+msgstr "ลบ"
+
+#: includes/class-isxl-admin.php
+msgid "Choose a language…"
+msgstr "เลือกภาษา…"
+
+#: includes/class-isxl-admin.php
+msgid "Custom…"
+msgstr "กำหนดเอง…"
+
+#: includes/class-isxl-admin.php
+msgid "Add language"
+msgstr "เพิ่มภาษา"
+
+#: includes/class-isxl-admin.php
+msgid "Removing a language keeps its content; the content simply has no language until you add it again."
+msgstr "ลบภาษาแล้วเนื้อหายังอยู่ แค่จะไม่มีภาษากำกับจนกว่าจะเพิ่มภาษานั้นกลับมา"
+
+#: includes/class-isxl-admin.php
+msgid "Save languages"
+msgstr "บันทึกภาษา"
+
+#: includes/class-isxl-admin.php
+msgid "Content without a language"
+msgstr "เนื้อหาที่ยังไม่มีภาษา"
+
+#: includes/class-isxl-admin.php
+msgid "Items without a language are hidden from the front end."
+msgstr "รายการที่ไม่มีภาษาจะไม่แสดงหน้าเว็บ"
+
+#: includes/class-isxl-admin.php
+msgid "items"
+msgstr "รายการ"
+
+#: includes/class-isxl-admin.php
+#, php-format
+msgid "Set them to %s"
+msgstr "ตั้งเป็น%sทั้งหมด"
+
+#: includes/class-isxl-admin.php
+msgid "Drag to reorder"
+msgstr "ลากเพื่อเรียงลำดับ"
+
+#: includes/class-isxl-admin.php
+msgid "Default language"
+msgstr "ภาษาหลัก"
+
+#: includes/class-isxl-admin.php
+msgid "Translated content types"
+msgstr "ประเภทเนื้อหาที่แปล"
+
+#: includes/class-isxl-admin.php
+msgid "Each item belongs to one language and can have one translation per language."
+msgstr "แต่ละรายการมีหนึ่งภาษา และมีฉบับแปลได้ภาษาละหนึ่งฉบับ"
+
+#: includes/class-isxl-admin.php
+msgid "Translated taxonomies"
+msgstr "หมวดหมู่ที่แปล"
+
+#: includes/class-isxl-admin.php
+msgid "Categories, tags and product attributes per language."
+msgstr "หมวดหมู่ แท็ก และคุณสมบัติสินค้าแยกตามภาษา"
+
+#: includes/class-isxl-admin.php
+msgid "All WooCommerce product attributes"
+msgstr "คุณสมบัติสินค้า WooCommerce ทั้งหมด"
+
+#: includes/class-isxl-wc.php includes/class-isxl-admin.php
+msgid "Save"
+msgstr "บันทึก"
+
+#: includes/class-isxl-admin.php
+msgid "Search…"
+msgstr "ค้นหา…"
+
+#: includes/class-isxl-admin.php
+msgid "All groups"
+msgstr "ทุกกลุ่ม"
+
+#: includes/class-isxl-admin.php
+msgid "String translations"
+msgstr "แปลข้อความ"
+
+#: includes/class-isxl-admin.php
+msgid "Leave a field empty to use the original text."
+msgstr "เว้นว่างไว้เพื่อใช้ข้อความต้นฉบับ"
+
+#: includes/class-isxl-admin.php
+msgid "Add a second language first."
+msgstr "เพิ่มภาษาที่สองก่อน"
+
+#: includes/class-isxl-admin.php
+msgid "Original"
+msgstr "ต้นฉบับ"
+
+#: includes/class-isxl-admin.php
+msgid "Save translations"
+msgstr "บันทึกคำแปล"
+
+#: includes/class-isxl-admin.php
+msgid "Theme texts"
+msgstr "ข้อความของธีม"
+
+#: includes/class-isxl-admin.php
+msgid "Texts from the Customizer (header, footer, buttons). Ticked ones appear in the list above."
+msgstr "ข้อความจาก Customizer เช่น header, footer, ปุ่ม ข้อที่ติ๊กไว้จะไปโผล่ในรายการด้านบน"
+
+#: includes/class-isxl-admin.php
+msgid "The active theme has no text settings."
+msgstr "ธีมที่ใช้อยู่ไม่มีข้อความให้ตั้งค่า"
+
+#: includes/class-isxl-admin.php
+msgid "Save theme texts"
+msgstr "บันทึกข้อความของธีม"
+
+#: includes/class-isxl-admin.php
+msgid "Translate a post, page or product"
+msgstr "แปลเรื่อง หน้า หรือสินค้า"
+
+#: includes/class-isxl-admin.php
+msgid "Open it in the editor → \"Language\" panel in the sidebar → \"+ Add\" next to a language. A draft copy is created in that language; translate it and publish. Lists also have a column per language: ✓ = this item, ✎ = edit translation, + = add."
+msgstr "เปิดใน editor → แผง \"ภาษา\" ทางขวา → กด \"+ เพิ่ม\" ข้างภาษาที่ต้องการ ระบบจะสร้างฉบับร่างเป็นภาษานั้นให้ แปลแล้วกดเผยแพร่ได้เลย ในหน้ารายการก็มีคอลัมน์แยกตามภาษา: ✓ = รายการนี้, ✎ = แก้ฉบับแปล, + = เพิ่มฉบับแปล"
+
+#: includes/class-isxl-admin.php
+msgid "Categories, tags and attributes"
+msgstr "หมวดหมู่ แท็ก และคุณสมบัติ"
+
+#: includes/class-isxl-admin.php
+msgid "Edit a term → \"Translations\" row → \"+ Add\". Products in a translation use the matching translated terms automatically."
+msgstr "แก้ไขหมวดหมู่ → แถว \"ฉบับแปล\" → \"+ เพิ่ม\" สินค้าฉบับแปลจะใช้หมวดหมู่ภาษาเดียวกันให้เอง"
+
+#: includes/class-isxl-admin.php
+msgid "Menus"
+msgstr "เมนู"
+
+#: includes/class-isxl-admin.php
+msgid "Appearance → Menus → Manage Locations: each location has one twin per extra language, e.g. \"Primary (English)\". Leave it empty to reuse the default menu."
+msgstr "หน้าตา → เมนู → จัดการตำแหน่ง: แต่ละตำแหน่งจะมีอีกช่องสำหรับแต่ละภาษา เช่น \"Primary (English)\" ถ้าเว้นว่างไว้จะใช้เมนูภาษาหลักแทน"
+
+#: includes/class-isxl-admin.php
+msgid "Use the \"Language switcher\" block, the shortcode [isxl_switcher] (style=\"dropdown\" for a select), or a menu Custom Link with URL #isxl-switcher."
+msgstr "ใช้บล็อก \"ตัวสลับภาษา\", shortcode [isxl_switcher] (ใส่ style=\"dropdown\" ถ้าอยากได้แบบดรอปดาวน์) หรือเพิ่มลิงก์กำหนดเองในเมนูโดยใส่ URL เป็น #isxl-switcher"
+
+#: includes/class-isxl-admin.php
+msgid "Widgets and blocks per language"
+msgstr "วิดเจ็ตและบล็อกแยกภาษา"
+
+#: includes/class-isxl-admin.php
+msgid "Classic widgets have a \"Show in language\" field. Any block (widgets, pages, templates) has \"Language visibility\" in its sidebar."
+msgstr "วิดเจ็ตแบบคลาสสิกมีช่อง \"แสดงในภาษา\" ส่วนบล็อกทุกตัว (วิดเจ็ต หน้า เทมเพลต) มีแผง \"แสดงตามภาษา\" ทางขวา"
+
+#: includes/class-isxl-admin.php
+msgid "Site title, theme and plugin texts"
+msgstr "ชื่อเว็บ ข้อความธีมและปลั๊กอิน"
+
+#: includes/class-isxl-admin.php
+msgid "Strings tab. Tick Customizer texts under \"Theme texts\" to make them translatable. Theme/plugin texts that ship with .mo files switch automatically with the language locale."
+msgstr "ไปที่แท็บข้อความ ติ๊กข้อความจาก Customizer ในส่วน \"ข้อความของธีม\" เพื่อเปิดให้แปลได้ ส่วนข้อความของธีมหรือปลั๊กอินที่มีไฟล์ .mo อยู่แล้วจะเปลี่ยนตาม locale ของภาษาให้เอง"
+
+#: includes/class-isxl-wc.php includes/class-isxl-admin.php insightx-lang.php
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+#: includes/class-isxl-admin.php
+msgid "Price, stock, SKU and the other fields chosen in the WooCommerce tab stay identical across translations of a product. Cart, checkout and account pages follow the language; orders remember it and emails go out in it."
+msgstr "ราคา สต็อก SKU และข้อมูลที่เลือกไว้ในแท็บ WooCommerce จะเหมือนกันทุกฉบับแปล หน้าตะกร้า ชำระเงิน และบัญชีจะเปลี่ยนตามภาษา คำสั่งซื้อจะจำภาษาไว้และส่งอีเมลเป็นภาษานั้น"
+
+#: includes/class-isxl-admin.php
+msgid "For developers"
+msgstr "สำหรับนักพัฒนา"
+
+#: includes/class-isxl-duplicator.php
+msgid "You cannot edit this item."
+msgstr "คุณไม่มีสิทธิ์แก้ไขรายการนี้"
+
+#: includes/class-isxl-duplicator.php
+msgid "This content type is not translated."
+msgstr "ประเภทเนื้อหานี้ไม่ได้เปิดให้แปล"
+
+#: includes/class-isxl-duplicator.php
+msgid "This taxonomy is not translated."
+msgstr "หมวดหมู่นี้ไม่ได้เปิดให้แปล"
+
+#: includes/class-isxl-strings.php
+msgid "Widgets"
+msgstr "วิดเจ็ต"
+
+#: includes/class-isxl-strings.php
+msgid "Theme"
+msgstr "ธีม"
+
+#: includes/class-isxl-wc.php
+msgid "Price & sale dates"
+msgstr "ราคาและช่วงลดราคา"
+
+#: includes/class-isxl-wc.php
+msgid "Stock"
+msgstr "สต็อก"
+
+#: includes/class-isxl-wc.php
+msgid "Weight, size & shipping class"
+msgstr "น้ำหนัก ขนาด และประเภทการจัดส่ง"
+
+#: includes/class-isxl-wc.php
+msgid "Tax"
+msgstr "ภาษี"
+
+#: includes/class-isxl-wc.php
+msgid "Product type, virtual & downloads"
+msgstr "ประเภทสินค้า สินค้าเสมือน และไฟล์ดาวน์โหลด"
+
+#: includes/class-isxl-wc.php
+msgid "Upsells, cross-sells & grouped"
+msgstr "สินค้าแนะนำ (upsell, cross-sell) และสินค้ากลุ่ม"
+
+#: includes/class-isxl-wc.php
+msgid "Attributes & default variation"
+msgstr "คุณสมบัติและตัวเลือกเริ่มต้น"
+
+#: includes/class-isxl-wc.php
+msgid "Image & gallery"
+msgstr "รูปสินค้าและแกลเลอรี"
+
+#: includes/class-isxl-wc.php
+msgid "Featured & catalog visibility"
+msgstr "สินค้าแนะนำและการแสดงในแคตตาล็อก"
+
+#: includes/class-isxl-wc.php
+msgid "WooCommerce emails"
+msgstr "อีเมล WooCommerce"
+
+#: includes/class-isxl-wc.php
+msgid "Email footer"
+msgstr "ท้ายอีเมล"
+
+#: includes/class-isxl-wc.php
+msgid "Keep identical across translations"
+msgstr "ข้อมูลที่ให้เหมือนกันทุกฉบับแปล"
+
+#: includes/class-isxl-wc.php
+msgid "Ticked data is copied from the product you save to all its translations. Title, description and slug are always per language."
+msgstr "ข้อมูลที่ติ๊กไว้จะคัดลอกจากสินค้าที่บันทึกไปยังทุกฉบับแปล ส่วนชื่อ รายละเอียด และ slug แยกตามภาษาเสมอ"
+
+#: includes/class-isxl-wc.php
+msgid "Pages"
+msgstr "หน้า"
+
+#: includes/class-isxl-wc.php
+msgid "Translate the Shop, Cart, Checkout, My account and Terms pages like any page (Pages → + in the language column). WooCommerce then uses the right one for each language."
+msgstr "แปลหน้าร้านค้า ตะกร้า ชำระเงิน บัญชีของฉัน และข้อกำหนด เหมือนหน้าทั่วไป (หน้า → กด + ในคอลัมน์ภาษา) แล้ว WooCommerce จะเลือกหน้าที่ตรงภาษาให้เอง"
+
+#: includes/class-isxl-widgets.php
+msgid "Show in language:"
+msgstr "แสดงในภาษา:"
+
+#: insightx-lang.php
+#, php-format
+msgid "Deactivate %s first — InsightX Lang stays off while another multilingual plugin is active."
+msgstr "ปิด %s ก่อน — InsightX Lang จะไม่ทำงานระหว่างที่มีปลั๊กอินหลายภาษาตัวอื่นเปิดอยู่"
+
+#: includes/class-isxl-admin.php
+#, php-format
+msgid "Delete \"%s\"? Its content stays, but it will have no language until you add this language again."
+msgstr "ลบ \"%s\" ใช่ไหม? เนื้อหาในภาษานี้ยังอยู่ แต่จะไม่มีภาษากำกับจนกว่าจะเพิ่มภาษานี้กลับมา"
+
+#: includes/class-isxl-admin.php
+msgid "Settings"
+msgstr "ตั้งค่า"
+
+#: includes/class-isxl-admin.php
+msgid "User Guide"
+msgstr "คู่มือการใช้งาน"
+
