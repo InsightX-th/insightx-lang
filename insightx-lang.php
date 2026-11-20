@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       InsightX Lang
  * Plugin URI:        https://insightx.in.th/
- * Version:           0.1.1
+ * Version:           0.1.2
  * Author:            InsightX
  * Author URI:        https://www.insightx.in.th
  * Text Domain:       insightx-lang
@@ -16,7 +16,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'ISXL_VERSION', '0.1.1' );
+define( 'ISXL_VERSION', '0.1.2' );
 define( 'ISXL_FILE', __FILE__ );
 define( 'ISXL_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
 define( 'ISXL_URL', trailingslashit( plugin_dir_url( __FILE__ ) ) );
@@ -109,10 +109,14 @@ register_deactivation_hook( __FILE__, 'flush_rewrite_rules' );
  */
 if ( file_exists( ISXL_DIR . 'libs/plugin-update-checker/plugin-update-checker.php' ) ) {
     require_once ISXL_DIR . 'libs/plugin-update-checker/plugin-update-checker.php';
+    require_once ISXL_DIR . 'includes/class-isxl-plugin-info.php';
+    ISXL_Plugin_Info::register_hooks();
     $isxl_update_checker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
         'https://github.com/InsightX-th/insightx-lang',
         __FILE__,
         'insightx-lang'
     );
     $isxl_update_checker->getVcsApi()->enableReleaseAssets();
+    $isxl_update_checker->addFilter( 'pre_inject_info', [ 'ISXL_Plugin_Info', 'decorate' ] );
+    $isxl_update_checker->addFilter( 'pre_inject_update', [ 'ISXL_Plugin_Info', 'decorate_update' ] );
 }

@@ -44,6 +44,8 @@ jobs:
         run: find . -type f -name '*.php' -not -path './libs/*' -print0 | xargs -0 -n1 php -l
       - name: Run URL helper tests
         run: php tests/run.php
+      - name: Check plugin details metadata
+        run: php tests/plugin-info.php
 
   assets:
     name: JavaScript, guide and translations

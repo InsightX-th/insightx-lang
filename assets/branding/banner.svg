@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1544" height="500" viewBox="0 0 1544 500" role="img" aria-labelledby="title desc">
+  <title id="title">InsightX Lang</title>
+  <desc id="desc">Language switching for WordPress and WooCommerce</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1">
+      <stop stop-color="#071735"/>
+      <stop offset="0.55" stop-color="#073b91"/>
+      <stop offset="1" stop-color="#0079ff"/>
+    </linearGradient>
+    <radialGradient id="light">
+      <stop stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bubble" x2="1" y2="1">
+      <stop stop-color="#fff"/>
+      <stop offset="1" stop-color="#d8efff"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#00133f" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="1544" height="500" fill="url(#background)"/>
+  <ellipse cx="1190" cy="260" rx="470" ry="310" fill="url(#light)"/>
+  <g fill="none" stroke="#9adfff" stroke-opacity="0.19" stroke-width="2">
+    <path d="M0 423c303-65 506-42 751 20s464 22 793-72"/>
+    <path d="M0 457c347-47 521-14 750 36s512 12 794-67"/>
+  </g>
+  <text x="112" y="182" fill="#fff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="104" font-weight="750" letter-spacing="-3">InsightX Lang</text>
+  <text x="116" y="247" fill="#c9e9ff" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="39" font-weight="600">Languages for WordPress &amp; WooCommerce</text>
+  <g filter="url(#shadow)">
+    <path d="M1002 99h206a38 38 0 0 1 38 38v136a38 38 0 0 1-38 38h-148l-54 43v-43h-4a38 38 0 0 1-38-38V137a38 38 0 0 1 38-38Z" fill="#fff"/>
+    <path d="M1157 204h205a38 38 0 0 1 38 38v132a38 38 0 0 1-38 38h-7v42l-54-42h-144a38 38 0 0 1-38-38V242a38 38 0 0 1 38-38Z" fill="url(#bubble)"/>
+  </g>
+  <text x="1025" y="265" fill="#0a285b" font-family="Arial,sans-serif" font-size="138" font-weight="750">A</text>
+  <text x="1192" y="362" fill="#0a285b" font-family="'Noto Sans Thai','Th Sarabun New',sans-serif" font-size="130" font-weight="750">ก</text>
+  <g fill="none" stroke="#a9e6ff" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1280 112c68 5 112 33 129 81"/>
+    <path d="m1380 171 32 24 14-38"/>
+    <path d="M1080 394c-59-7-97-37-109-86"/>
+    <path d="m997 328-29-27-18 36"/>
+  </g>
+</svg>

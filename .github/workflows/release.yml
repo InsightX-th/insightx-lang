@@ -24,6 +24,7 @@ jobs:
           echo "tag=$TAG header=$HEADER const=$CONST"
           [ "$TAG" = "$HEADER" ] && [ "$TAG" = "$CONST" ] || { echo '::error::Version mismatch'; exit 1; }
           php tests/run.php
+          php tests/plugin-info.php
       - name: Build installable zip from tracked release files
         run: |
           mkdir -p package
@@ -31,7 +32,7 @@ jobs:
           (cd package && zip -qr "../insightx-lang-${GITHUB_REF_NAME}.zip" insightx-lang)
           unzip -t "insightx-lang-${GITHUB_REF_NAME}.zip" | tail -1
           unzip -Z1 "insightx-lang-${GITHUB_REF_NAME}.zip" > release-files.txt
-          for file in insightx-lang.php assets/icon-128x128.png assets/icon-256x256.png assets/images/guide/languages-real.png includes/views/user-guide.php libs/plugin-update-checker/plugin-update-checker.php; do
+          for file in insightx-lang.php assets/icon-128x128.png assets/icon-256x256.png assets/branding/banner.svg assets/images/guide/languages-real.png includes/views/user-guide.php includes/class-isxl-plugin-info.php libs/plugin-update-checker/plugin-update-checker.php; do
             grep -Fxq "insightx-lang/$file" release-files.txt || { echo "::error::Missing release file: $file"; exit 1; }
           done
       - name: Prepare release notes
